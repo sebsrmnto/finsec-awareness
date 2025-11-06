@@ -3,77 +3,240 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>FinSec Awareness</title>
+		<title>FinAware - Online Banking Safety Guide</title>
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<header>
-			<h1>FinSec Awareness</h1>
+			<h1>🛡️ FinAware</h1>
 			<nav>
 				<ul>
 					<li><a href="#home">Home</a></li>
 					<li><a href="#threats">Common Threats</a></li>
-					<li><a href="#best practices">Best Practices</a></li>
+					<li><a href="#best-practices">Best Practices</a></li>
+					<li><a href="#report-scam">Report a Scam</a></li>
 					<li><a href="#resources">Resources</a></li>
-					<li><a href="#about">About</a></li>
 				</ul>
 			</nav>
 		</header>
-		<section id="home">
-			<h2>Protect your Account. Stay aware. Stay Secure.</h2>
-			<p>
-				Online banking has become a convenient way to manage your finances, but it also comes with risks.
-				Stay informed about the latest threats and protect your account with our tips and resources.
-			</p>
-			<a href="#threats" class="btn">Learn More</a>
+
+		<!-- Hero Section -->
+		<section id="home" class="hero">
+			<div class="hero-content">
+				<h2>Protect Your Account. Stay Aware. Stay Secure.</h2>
+				<p>
+					Online banking has become a convenient way to manage your finances, but it also comes with risks.
+					Stay informed about the latest threats and protect your account with our tips and resources.
+				</p>
+				<a href="#threats" class="btn btn-primary">Learn More</a>
+			</div>
 		</section>
 
+		<!-- Common Threats Section -->
 		<section id="threats">
-			<h2>Common Threats</h2>
+			<div class="container">
+				<h2 class="section-title">Common Threats in the Philippines</h2>
+				<p class="section-subtitle">Stay vigilant and recognize these common scams targeting Filipino bank users</p>
 
-			<div class="threat-container">
-				<article class="threat-card">
-					<h3>Phishing</h3>
-					<p>Fake emails, texts, or websites that trick you into revealing your login credentials.</p>
-				</article>
+				<div class="threat-container">
+					<article class="threat-card threat-warning card-animate" data-threat="phishing">
+						<div class="threat-icon">🎣</div>
+						<h3>Phishing</h3>
+						<p>Fake emails or websites that trick you into giving your login details.</p>
+					</article>
 
-				<article class="threat-card">
-					<h3>Smishing</h3>
-					<p>Scam messages that look like official bank texts but contains malicious links.</p>
-				</article>
+					<article class="threat-card threat-warning card-animate" data-threat="smishing">
+						<div class="threat-icon">📱</div>
+						<h3>Smishing</h3>
+						<p>Scam texts pretending to be from banks to steal your info.</p>
+					</article>
 
-				<article class="threat-card">
-					<h3>Vishing</h3>
-					<p>Fraudsters call pretending to be bank representatives to get yout OTP or PIN.</p>
-				</article>
+					<article class="threat-card threat-warning card-animate" data-threat="vishing">
+						<div class="threat-icon">☎️</div>
+						<h3>Vishing</h3>
+						<p>Scammers call you and pretend to be bank staff to get your OTPs.</p>
+					</article>
+
+					<article class="threat-card threat-warning card-animate" data-threat="fake-investments">
+						<div class="threat-icon">💰</div>
+						<h3>Fake Investments</h3>
+						<p>Promises of 'easy profit' or 'double your money' scams.</p>
+					</article>
+
+					<article class="threat-card threat-warning card-animate" data-threat="account-takeover">
+						<div class="threat-icon">🔐</div>
+						<h3>Account Takeover</h3>
+						<p>Hackers gain access to your account using weak or stolen passwords.</p>
+					</article>
+
+					<article class="threat-card threat-warning card-animate" data-threat="malicious-apps">
+						<div class="threat-icon">🦠</div>
+						<h3>Malicious Apps</h3>
+						<p>Fake apps or unsafe links that steal personal or banking information.</p>
+					</article>
+				</div>
 			</div>
-
 		</section>
 
-		<section id="best practices">
-			<h2>Best Online Banking Practices</h2>
+		<!-- Best Practices Section -->
+		<section id="best-practices">
+			<div class="container">
+				<h2 class="section-title">Best Online Banking Practices</h2>
+				<p class="section-subtitle">Follow these essential security tips to keep your accounts safe</p>
 
-			<div class="practice-container">
-				<ul class="best-practices-list">
-					<li>✅Always use official banking apps or websites.</li>
-					<li>🔒Never share your One-time Password (OTP) or PIN with anyone.</li>
-					<li>🧠Verify links before clicking -- scammers use fake ones.</li>
-					<li>📱Enable two-factor authentication (2FA) whenever possible.</li>
-					<li>🚫Avoid longging using public Wi-Fi networks.</li>
-					<li>🔔Monitor your account regularly for unusual activity.</li>
-				</ul>
+				<div class="practice-container">
+					<div class="practice-card practice-safe card-animate" data-practice="official-apps">
+						<div class="practice-icon">✅</div>
+						<h3>Use Official Apps</h3>
+						<p>Always use official banking apps or websites. Download apps only from official app stores.</p>
+					</div>
+
+					<div class="practice-card practice-safe card-animate" data-practice="never-share-otp">
+						<div class="practice-icon">🔒</div>
+						<h3>Never Share OTP or PIN</h3>
+						<p>Never share your One-time Password (OTP) or PIN with anyone. Banks will never ask for these.</p>
+					</div>
+
+					<div class="practice-card practice-safe card-animate" data-practice="verify-links">
+						<div class="practice-icon">🧠</div>
+						<h3>Verify Links</h3>
+						<p>Verify links before clicking. Scammers use fake ones that look similar to real bank websites.</p>
+					</div>
+
+					<div class="practice-card practice-safe card-animate" data-practice="enable-2fa">
+						<div class="practice-icon">📱</div>
+						<h3>Enable 2FA</h3>
+						<p>Enable two-factor authentication (2FA) whenever possible for an extra layer of security.</p>
+					</div>
+
+					<div class="practice-card practice-safe card-animate" data-practice="avoid-public-wifi">
+						<div class="practice-icon">🚫</div>
+						<h3>Avoid Public Wi-Fi</h3>
+						<p>Avoid logging in using public Wi-Fi networks. Use your mobile data or secure networks instead.</p>
+					</div>
+
+					<div class="practice-card practice-safe card-animate" data-practice="monitor-regularly">
+						<div class="practice-icon">🔔</div>
+						<h3>Monitor Regularly</h3>
+						<p>Monitor your account regularly for unusual activity. Report suspicious transactions immediately.</p>
+					</div>
+				</div>
 			</div>
 		</section>
+
+		<!-- Report a Scam Section -->
+		<section id="report-scam">
+			<div class="container">
+				<h2 class="section-title">Report a Scam</h2>
+				<p class="section-subtitle">Help us raise awareness by sharing your experience.</p>
+
+				<div class="report-form-container">
+					<form id="report-scam-form" class="report-form">
+						<!-- Name Field (Optional) -->
+						<div class="form-group">
+							<label for="report-name">Name (Optional)</label>
+							<input type="text" id="report-name" name="name" placeholder="Your name">
+						</div>
+
+						<!-- Email Field (Optional) -->
+						<div class="form-group">
+							<label for="report-email">Email (Optional)</label>
+							<input type="email" id="report-email" name="email" placeholder="your.email@example.com">
+						</div>
+
+						<!-- Scam Type Dropdown -->
+						<div class="form-group">
+							<label for="report-scam-type">Scam Type</label>
+							<select id="report-scam-type" name="scam-type" required>
+								<option value="">Select a scam type...</option>
+								<option value="phishing">Phishing</option>
+								<option value="fake-bank-app">Fake Bank App</option>
+								<option value="otp-scam">OTP Scam</option>
+								<option value="other">Other</option>
+							</select>
+						</div>
+
+						<!-- Description Textarea -->
+						<div class="form-group">
+							<label for="report-description">Description</label>
+							<textarea id="report-description" name="description" rows="5" placeholder="Describe the scam you encountered..." required></textarea>
+						</div>
+
+						<!-- Submit Button -->
+						<button type="submit" class="btn btn-primary btn-submit">Submit</button>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<!-- Resources Section -->
+		<section id="resources">
+			<div class="container">
+				<h2 class="section-title">Additional Resources</h2>
+				<div class="resources-container">
+					<div class="resource-card">
+						<h3>Report Scams</h3>
+						<p>If you encounter a scam, report it immediately to your bank and the National Bureau of Investigation (NBI) Cybercrime Division.</p>
+					</div>
+					<div class="resource-card">
+						<h3>Stay Updated</h3>
+						<p>Follow official bank social media accounts and websites for the latest security advisories and updates.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Success Modal for Form Submission -->
+		<div id="success-modal" class="modal-overlay">
+			<div class="modal-content success-modal-content">
+				<button class="modal-close" aria-label="Close modal">&times;</button>
+				<div class="modal-body success-modal-body">
+					<div class="success-icon">✅</div>
+					<h2 class="success-title">Thank You!</h2>
+					<p class="success-message">Your report helps others stay safe.</p>
+					<button class="btn btn-primary btn-close-success">Close</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modals for Threat Cards and Best Practices -->
+		<div id="modal-overlay" class="modal-overlay">
+			<div class="modal-content">
+				<button class="modal-close" aria-label="Close modal">&times;</button>
+				<div class="modal-body">
+					<h2 class="modal-title"></h2>
+					<p class="modal-description"></p>
+					
+					<div class="modal-examples">
+						<div class="example-box example-fake">
+							<h4>⚠️ Fake Example</h4>
+							<p class="example-text"></p>
+						</div>
+						<div class="example-box example-real">
+							<h4>✅ Real Example</h4>
+							<p class="example-text"></p>
+						</div>
+					</div>
+
+					<div class="modal-tips">
+						<h4>💡 How to Avoid It:</h4>
+						<ul class="tips-list"></ul>
+					</div>
+
+					<button class="btn btn-close-modal">Close</button>
+				</div>
+			</div>
+		</div>
 
 		<button id="backToTop" title="Go to top">↑</button>
 		<script src="script.js"></script>
-	</body>
 
-	<footer>
-		<p>&copy; 2025 FinSec Awareness Project | Designed by Sebastian Sarmiento</p>
-		<p class="footer-links">
-			<a href="hero">Home</a> |
-			<a href="threats">Threats</a> |
-			<a href="best-practices">Best practices</a>
-		</p>
-	</footer>
+		<footer>
+			<div class="footer-content">
+				<p><strong>Sebastian Sarmiento</strong></p>
+				<p class="footer-tagline">Made for cybersecurity awareness</p>
+				<p class="footer-copyright">&copy; 2025 FinAware Project</p>
+			</div>
+		</footer>
+	</body>
+</html>
