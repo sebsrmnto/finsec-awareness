@@ -1,3 +1,86 @@
+// ========== MOBILE MENU TOGGLE ==========
+const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+const mobileContactBtn = document.getElementById("mobileContactBtn");
+
+// Toggle mobile menu
+if (mobileMenuToggle && mobileMenu) {
+  mobileMenuToggle.addEventListener("click", function() {
+    mobileMenuToggle.classList.toggle("active");
+    mobileMenu.classList.toggle("active");
+    document.body.style.overflow = mobileMenu.classList.contains("active") ? "hidden" : "auto";
+  });
+
+  // Close mobile menu when clicking on a link
+  const mobileNavLinks = mobileMenu.querySelectorAll("a");
+  mobileNavLinks.forEach(function(link) {
+    link.addEventListener("click", function() {
+      // Small delay to allow navigation
+      setTimeout(function() {
+        mobileMenuToggle.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }, 300);
+    });
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener("click", function(event) {
+    if (!mobileMenuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+      if (mobileMenu.classList.contains("active")) {
+        mobileMenuToggle.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+    }
+  });
+}
+
+// Function to scroll to section with mobile offset
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    const isMobile = window.innerWidth <= 768;
+    const headerOffset = isMobile ? 64 : 80;
+    const elementPosition = section.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+}
+
+// ========== CONTACT US BUTTON ==========
+const contactUsBtn = document.getElementById("contactUsBtn");
+
+// When Contact us button is clicked, scroll to Report a Scam section
+if (contactUsBtn) {
+  contactUsBtn.addEventListener("click", function() {
+    scrollToSection("report-scam");
+    // Close mobile menu if open
+    if (mobileMenu && mobileMenu.classList.contains("active")) {
+      mobileMenuToggle.classList.remove("active");
+      mobileMenu.classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+  });
+}
+
+// Mobile contact button
+if (mobileContactBtn) {
+  mobileContactBtn.addEventListener("click", function() {
+    scrollToSection("report-scam");
+    // Close mobile menu
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.classList.remove("active");
+      mobileMenu.classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+  });
+}
+
 // ========== BACK TO TOP BUTTON ==========
 const backToTopBtn = document.getElementById("backToTop");
 
@@ -237,7 +320,13 @@ function openModal(type, data) {
   modalOverlay.classList.add("active");
   
   // Prevent body scrolling when modal is open
-  document.body.style.overflow = "hidden";
+  if (window.innerWidth <= 768) {
+    document.body.classList.add("modal-open");
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
+  } else {
+    document.body.style.overflow = "hidden";
+  }
 }
 
 // Function to close the modal
@@ -246,7 +335,13 @@ function closeModal() {
   modalOverlay.classList.remove("active");
   
   // Restore body scrolling
-  document.body.style.overflow = "auto";
+  if (window.innerWidth <= 768) {
+    document.body.classList.remove("modal-open");
+    document.body.style.position = "";
+    document.body.style.width = "";
+  } else {
+    document.body.style.overflow = "auto";
+  }
 }
 
 // Add click event listeners to all threat cards
@@ -306,13 +401,29 @@ const btnCloseSuccess = document.querySelector(".btn-close-success");
 // Function to open the success modal
 function openSuccessModal() {
   successModal.classList.add("active");
-  document.body.style.overflow = "hidden";
+  
+  // Prevent body scrolling when modal is open
+  if (window.innerWidth <= 768) {
+    document.body.classList.add("modal-open");
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
+  } else {
+    document.body.style.overflow = "hidden";
+  }
 }
 
 // Function to close the success modal
 function closeSuccessModal() {
   successModal.classList.remove("active");
-  document.body.style.overflow = "auto";
+  
+  // Restore body scrolling
+  if (window.innerWidth <= 768) {
+    document.body.classList.remove("modal-open");
+    document.body.style.position = "";
+    document.body.style.width = "";
+  } else {
+    document.body.style.overflow = "auto";
+  }
 }
 
 // Handle form submission
